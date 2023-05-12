@@ -23,13 +23,12 @@ int recursive_search(int *array, size_t size, int value)
 		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
 
 	printf("\n");
-	
-	if (value == array[half])
-		 return ((int)half);
-
 
 	if (half && size % 2 == 0)
 		half--;
+
+	 if (value == array[half])
+                 return ((int)half);
 
 	if (value < array[half])
 		return (recursive_search(array, half, value));
